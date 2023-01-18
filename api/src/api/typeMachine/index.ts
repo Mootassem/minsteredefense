@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/type-machine`,
+    require('./typeMachineCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/type-machine/:id`,
+    require('./typeMachineUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/type-machine/import`,
+    require('./typeMachineImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/type-machine`,
+    require('./typeMachineDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/type-machine/autocomplete`,
+    require('./typeMachineAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/type-machine`,
+    require('./typeMachineList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/type-machine/:id`,
+    require('./typeMachineFind').default,
+  );
+};

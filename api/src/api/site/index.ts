@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/site`,
+    require('./siteCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/site/:id`,
+    require('./siteUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/site/import`,
+    require('./siteImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/site`,
+    require('./siteDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/site/autocomplete`,
+    require('./siteAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/site`,
+    require('./siteList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/site/:id`,
+    require('./siteFind').default,
+  );
+};

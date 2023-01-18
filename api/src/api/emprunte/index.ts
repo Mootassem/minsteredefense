@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/emprunte`,
+    require('./emprunteCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/emprunte/:id`,
+    require('./emprunteUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/emprunte/import`,
+    require('./emprunteImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/emprunte`,
+    require('./emprunteDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/emprunte/autocomplete`,
+    require('./emprunteAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/emprunte`,
+    require('./emprunteList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/emprunte/:id`,
+    require('./emprunteFind').default,
+  );
+};

@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/type-operation`,
+    require('./typeOperationCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/type-operation/:id`,
+    require('./typeOperationUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/type-operation/import`,
+    require('./typeOperationImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/type-operation`,
+    require('./typeOperationDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/type-operation/autocomplete`,
+    require('./typeOperationAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/type-operation`,
+    require('./typeOperationList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/type-operation/:id`,
+    require('./typeOperationFind').default,
+  );
+};
